@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 59706b3a3a9477e550ca463d78e83cb41953d14f
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
