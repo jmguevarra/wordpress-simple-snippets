@@ -1,21 +1,7 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Wordpress Taxonomy</h3>
-
+  <h3 align="center">Wordpress Taxonomy Snippet</h3>
   <p align="center">
     Simple snippet to create taxonomy and how to retrieve the taxonomy term values from database
     <br />
@@ -34,7 +20,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-project">About The Snippet</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -124,25 +110,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/jmguevarra/wordpress-simple-snippets/issues) for a list of proposed features (and known issues).
 
 
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
 <!-- CONTACT -->
 ## Contact
 
-Jaime Guevarra Jr. - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Facebook: [https://www.facebook.com/JM.Guevarra22](JM Guevarra)
+Upwork: [https://www.upwork.com/freelancers/~019dfd9fd872ed6675](Jaime G.)
+OnlineJobsPH: [https://www.onlinejobs.ph/jobseekers/info/1524593](Jaime Guevarra Jr)
+Skype ID: [https://web.skype.com/](live:jaimeguevarra22)
+Email: [mailto:jaimeguevarra22@gmail.com](Jaime Guevarra Jr)
+Number: [tel:09125213454](09125213454)
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Repository Link: [https://github.com/jmguevarra/wordpress-simple-snippets/](https://github.com/jmguevarra/wordpress-simple-snippets/)
 
 
 
