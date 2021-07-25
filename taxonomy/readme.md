@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 59706b3a3a9477e550ca463d78e83cb41953d14f
-<!-- PROJECT LOGO -->
-<br />
 <p align="center">
   <h3 align="center">Wordpress Taxonomy Snippet</h3>
   <p align="center">
@@ -117,12 +111,12 @@ See the [open issues](https://github.com/jmguevarra/wordpress-simple-snippets/is
 <!-- CONTACT -->
 ## Contact
 
-Facebook: [https://www.facebook.com/JM.Guevarra22](JM Guevarra)
-Upwork: [https://www.upwork.com/freelancers/~019dfd9fd872ed6675](Jaime G.)
-OnlineJobsPH: [https://www.onlinejobs.ph/jobseekers/info/1524593](Jaime Guevarra Jr)
-Skype ID: [https://web.skype.com/](live:jaimeguevarra22)
-Email: [mailto:jaimeguevarra22@gmail.com](Jaime Guevarra Jr)
-Number: [tel:09125213454](09125213454)
+Facebook: [JM Guevarra](https://www.facebook.com/JM.Guevarra22)<br>
+Upwork: [Jaime G.](https://www.upwork.com/freelancers/~019dfd9fd872ed6675)<br>
+OnlineJobsPH: [Jaime Guevarra Jr](https://www.onlinejobs.ph/jobseekers/info/1524593)<br>
+Skype ID: [jaimeguevarra22](https://web.skype.com/)<br>
+Email: [Jaime Guevarra Jr](mailto:jaimeguevarra22@gmail.com)<br>
+Number: [09125213454](tel:09125213454)
 
 Repository Link: [https://github.com/jmguevarra/wordpress-simple-snippets/](https://github.com/jmguevarra/wordpress-simple-snippets/)
 
