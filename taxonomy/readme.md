@@ -1,5 +1,7 @@
+<p align="center"><img src="images/taxonomy-genre.png" width="720px"/></p>
+
 <p align="center">
-  <h3 align="center">Wordpress Taxonomy Snippet</h3>
+  <h3 align="center">Wordpress Taxonomy</h3>
   <p align="center">
     Simple snippet to create taxonomy and how to retrieve the taxonomy term values from database
     <br />
@@ -10,7 +12,6 @@
     <a href="https://github.com/jmguevarra/wordpress-simple-snippets/issues">Request Feature</a>
   </p>
 </p>
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -24,10 +25,13 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#usage">Fetch Taxonomy from Database</a></li>
       </ul>
     </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact">Contributing</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contribution">Contribution</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -35,8 +39,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-![Genre/Category](/images/taxonomy-genre.png)
 
 Taxonomy in wordpress is feature that you can add for specific categories of you post type. In the given example I made genre as categories of movies.
 
@@ -77,6 +79,7 @@ function register_taxonomy_genre() {
 add_action('init', 'register_taxonomy_genre');  //load it to wordpress init function
 ```
 
+<!-- Installation -->
 ### Installation
 
 1. Goto you functions.php 
@@ -109,7 +112,9 @@ add_action('init', 'register_taxonomy_genre');  //load it to wordpress init func
     'query_var'         => true,
     'rewrite'           => ['slug' => 'genre'],
     ];
+
     register_taxonomy('genre', ['movie'], $args);
+
     /** 3 arguements
      * genre - as taxonomy id
      * [movies] - arrays of post type object. For me its movies so this genre taxonmy will add in Custom Post Type of Movie
@@ -123,14 +128,60 @@ add_action('init', 'register_taxonomy_genre');  //load it to wordpress init func
   ```
 
 Result:
-![Taxonomy](/images/taxonomy-genre.png)
+<p align="center"><img src="images/taxonomy-genre.png" width="720px"/></p>
 
 
+<!-- Usage  -->
+### Usage
+To add new category/genre just click the genre. Then fill out the text fields.
+
+<p align="center"><img src="images/inside-taxonomy-genre.png" width="720px"/></p>
+
+
+<!-- Fetch Taxonomy  -->
+### Fetch Taxonomy from Database
+<p align="center"><img src="images/taxonomy-genre-values.png" /></p>
+
+To fetch the taxonomy from database you need to call get_terms() function of wordpress. see example below:
+```php
+  <fieldset data-movie-form="group single-line">
+  <label data-movie-form="main-label" for="movie-title">Genre</label>
+
+    <?php 
+        //retreiving values for custom taxonomies/category
+        $genres = get_terms( array(
+            'taxonomy' => 'genre',
+            'hide_empty' => false,
+        ));
+    ?>
+
+  <select data-css-form="input select" id="movie-genre" name="movie-genre">
+    <option>Select Genre</option>
+    <?php 
+        //Loop the different Genre/Taxonomies Term
+        foreach($genres as $genre) : ?>
+        <option value="<?= $genre->term_id; ?>"><?= $genre->name; ?></option>
+    <?php endforeach; ?>
+  </select>
+</fieldset>
+```
 
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/jmguevarra/wordpress-simple-snippets/issues) for a list of proposed features (and known issues).
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 
 <!-- CONTACT -->
