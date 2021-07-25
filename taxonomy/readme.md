@@ -23,12 +23,9 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contributing</a></li>
   </ol>
@@ -39,66 +36,94 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Genre/Category](/images/taxonomy-genre.png)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
-
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
-
-### Built With
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-* [Laravel](https://laravel.com)
-
+Taxonomy in wordpress is feature that you can add for specific categories of you post type. In the given example I made genre as categories of movies.
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
+To initiate this kind of tab in wordpress post type you need to call register_taxonomy_genre. _See full documentation(https://developer.wordpress.org/reference/functions/register_taxonomy/)_
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```php
+/**
+ * Create Custom Taxonomy
+ * Functions: register_taxonomy, init
+ */
+function register_taxonomy_genre() {
+    $labels = [
+    'name'              => _x('Genres', 'taxonomy general name'),
+    'singular_name'     => _x('Genre', 'taxonomy singular name'),
+    'search_items'      => __('Search Genres'),
+    'all_items'         => __('All Genres'),
+    'parent_item'       => __('Parent Genre'),
+    'parent_item_colon' => __('Parent Genre:'),
+    'edit_item'         => __('Edit Genre'),
+    'update_item'       => __('Update Genre'),
+    'add_new_item'      => __('Add New Genre'),
+    'new_item_name'     => __('New Genre Name'),
+    'menu_name'         => __('Genre'),
+    ];
+    $args = [
+    'hierarchical'      => true, // make it hierarchical (like categories)
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => ['slug' => 'genre'],
+    ];
+    register_taxonomy('genre', ['movie'], $args);
+}
+add_action('init', 'register_taxonomy_genre');  //load it to wordpress init function
+```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Goto you functions.php 
+2. Create your own function name for me its register_taxonomy_genre(). <a href="##getting-started">see above</a>
+  ```php
+  function register_taxonomy_genre() {
+    //code here
+  }
+  ```
+3. Inside of it you need to call the wordpress function - register_taxonomy() and it has arguements for setting and labels.The above example is just basic setting for taxonomy. _check here for documentation(https://developer.wordpress.org/reference/functions/register_taxonomy/)_
+  ```php
+    $labels = [
+    'name'              => _x('Genres', 'taxonomy general name'),
+    'singular_name'     => _x('Genre', 'taxonomy singular name'),
+    'search_items'      => __('Search Genres'),
+    'all_items'         => __('All Genres'),
+    'parent_item'       => __('Parent Genre'),
+    'parent_item_colon' => __('Parent Genre:'),
+    'edit_item'         => __('Edit Genre'),
+    'update_item'       => __('Update Genre'),
+    'add_new_item'      => __('Add New Genre'),
+    'new_item_name'     => __('New Genre Name'),
+    'menu_name'         => __('Genre'),
+    ];
+    $args = [
+    'hierarchical'      => true, // make it hierarchical (like categories)
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => ['slug' => 'genre'],
+    ];
+    register_taxonomy('genre', ['movie'], $args);
+    /** 3 arguements
+     * genre - as taxonomy id
+     * [movies] - arrays of post type object. For me its movies so this genre taxonmy will add in Custom Post Type of Movie
+     * $args - its array variable for custom taxonomy settings
+     */
+  ```
 
+4. add your register_taxonomy_genre() function to wordpress init to load it and its done.
+  ```php
+    add_action('init', 'register_taxonomy_genre');  //load it to wordpress init function
+  ```
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+Result:
+![Taxonomy](/images/taxonomy-genre.png)
 
 
 
@@ -114,9 +139,9 @@ See the [open issues](https://github.com/jmguevarra/wordpress-simple-snippets/is
 Facebook: [JM Guevarra](https://www.facebook.com/JM.Guevarra22)<br>
 Upwork: [Jaime G.](https://www.upwork.com/freelancers/~019dfd9fd872ed6675)<br>
 OnlineJobsPH: [Jaime Guevarra Jr](https://www.onlinejobs.ph/jobseekers/info/1524593)<br>
-Skype ID: [jaimeguevarra22](https://web.skype.com/)<br>
-Email: [Jaime Guevarra Jr](mailto:jaimeguevarra22@gmail.com)<br>
-Number: [09125213454](tel:09125213454)
+Skype ID: [live: jaimeguevarra22](https://web.skype.com/)<br>
+Email: [jaimeguevarra22@gmail.com](mailto:jaimeguevarra22@gmail.com)<br>
+Number: [09125213454]
 
 Repository Link: [https://github.com/jmguevarra/wordpress-simple-snippets/](https://github.com/jmguevarra/wordpress-simple-snippets/)
 
