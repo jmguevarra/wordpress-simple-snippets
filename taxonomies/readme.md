@@ -45,7 +45,7 @@ Taxonomy in wordpress is feature that you can add for specific categories of you
 
 <!-- GETTING STARTED -->
 ## Getting Started
-To initiate this kind of tab in wordpress post type you need to call register_taxonomy_genre. _See full [documentation](https://developer.wordpress.org/reference/functions/register_taxonomy/)_
+To initiate this kind of tab in wordpress post type you need to call register_taxonomy_genre. _See full documentation(https://developer.wordpress.org/reference/functions/register_taxonomy/)_
 
 ```php
 /**
@@ -89,7 +89,7 @@ add_action('init', 'register_taxonomy_genre');  //load it to wordpress init func
     //code here
   }
   ```
-3. Inside of it you need to call the wordpress function - register_taxonomy() and it has arguements for setting and labels. The below example is just basic setting for taxonomy. _check here for [documentation](https://developer.wordpress.org/reference/functions/register_taxonomy/)_
+3. Inside of it you need to call the wordpress function - register_taxonomy() and it has arguements for setting and labels.The above example is just basic setting for taxonomy. _check here for documentation(https://developer.wordpress.org/reference/functions/register_taxonomy/)_
   ```php
     $labels = [
     'name'              => _x('Genres', 'taxonomy general name'),
